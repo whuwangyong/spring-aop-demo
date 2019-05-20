@@ -2,6 +2,7 @@ package concert;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -12,16 +13,18 @@ import java.util.List;
  */
 @Data
 @Slf4j
+@Component
 public class Song implements Performance {
 
     private List<String> lyrics;
 
     @Override
     public void perform() throws Exception {
-        if(lyrics.isEmpty()) {
+        if(lyrics == null) {
             log.info("忘词");
             throw new Exception();
         }
-        lyrics.forEach(System.out::println);
+        else
+            lyrics.forEach(System.out::println);
     }
 }

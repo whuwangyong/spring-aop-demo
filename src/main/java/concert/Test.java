@@ -12,7 +12,7 @@ import java.util.List;
  * @Date 2019/05/17
  * @Time 14:13
  */
-@Component
+//@Component
 public class Test implements InitializingBean {
 
     @Override
