@@ -1,16 +1,15 @@
-package concert;
+package cn.whu.wy.aop.concert;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
- * @Author WangYong
- * @Date 2019/05/17
- * @Time 13:50
+ * Author WangYong
+ * Date 2019/05/17
+ * Time 13:50
  */
-/*
+
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan
@@ -21,4 +20,4 @@ public class AppConfig {
 //        return new Audience();
 //    }
 }
-*/
+

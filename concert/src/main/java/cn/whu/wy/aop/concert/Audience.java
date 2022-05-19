@@ -1,4 +1,4 @@
-package concert;
+package cn.whu.wy.aop.concert;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -6,35 +6,36 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
- * @Author WangYong
- * @Date 2019/05/17
- * @Time 11:06
+ * Author WangYong
+ * Date 2019/05/17
+ * Time 11:06
  */
 @Aspect
 @Component
+@Slf4j
 public class Audience {
 
-    @Pointcut("execution( * concert.Performance.perform(..))")
+    @Pointcut("execution( * cn.whu.wy.aop.concert..Performance.perform(..))")
     public void performance() {}
 
     @Before("performance()")
     public void mutePhone(){
-        System.out.println("mute phone");
+        log.info("mute phone");
     }
 
     @Before("performance()")
     public void takeSeats() {
-        System.out.println("take seats");
+        log.info("take seats");
     }
 
     @AfterReturning("performance()")
     public void applause() {
-        System.out.println("CLAP! CLAP! CLAP!");
+        log.info("CLAP! CLAP! CLAP!");
     }
 
     @AfterThrowing("performance()")
     public void demandRefund(){
-        System.out.println("Demanding a refund");
+        log.info("Demanding a refund");
     }
 
 }

@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package sample.aop.service;
+package cn.whu.wy.aop.simple.monitor;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
+@Aspect
 @Component
-public class HelloWorldService {
+public class ServiceMonitor {
 
-	@Value("${name:World}")
-	private String name;
-
-	public String getHelloMessage() {
-		return "Hello " + this.name;
+	@AfterReturning("execution(* cn.whu.wy.aop.simple..*Service.*(..))")
+	public void logServiceAccess(JoinPoint joinPoint) {
+		System.out.println("Completed: " + joinPoint);
 	}
 
 }

@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package sample.aop;
+package cn.whu.wy.aop.simple;
 
-import sample.aop.service.HelloWorldService;
-
+import cn.whu.wy.aop.simple.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
